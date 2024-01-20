@@ -36,6 +36,7 @@ jobs:
         env:
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }} 
+          CGO_ENABLED: 0
       - name: Handle for Windows Build
         if: ${{ matrix.goos == 'windows' }}
         run: mv goyoubbs-${{ matrix.goos }}-${{ matrix.goarch }} goyoubbs-${{ matrix.goos }}-${{ matrix.goarch }}.exe
